@@ -7,6 +7,7 @@ const inputPassword = document.getElementById('password');
 const buttonOut = document.querySelector('.button-out');
 const userName = document.querySelector('.user-name');
 
+
 const login = (user) => {
     buttonAuth.style.display = 'none';
 
@@ -15,6 +16,8 @@ const login = (user) => {
 
     userName.textContent = user.login;
     modalAuth.style.display = 'none';
+
+    
 };
 
 const logout = (user) => {
@@ -50,6 +53,11 @@ logInForm.addEventListener('submit', (e) => {
     const user = {
         login: inputLogin.value,
         password: inputPassword.value
+    }
+
+    if(inputLogin.value == '') {
+        alert('Введите вал логин')
+        return;
     }
 
     localStorage.setItem('user', JSON.stringify(user));
