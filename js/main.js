@@ -55,8 +55,8 @@ logInForm.addEventListener('submit', (e) => {
         password: inputPassword.value
     }
 
-    if(inputLogin.value == '') {
-        alert('Введите вал логин')
+    if(inputLogin.value === '' || inputLogin.value.length < 3) {
+        alert('Введите корректный логин, больше 2х знаков')
         return;
     }
 
