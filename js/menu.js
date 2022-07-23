@@ -1,9 +1,13 @@
+const resatourant = 'food-band'
 
 const renderItems = (data) => {
     console.log(data)
 }
-fetch(`./db/partners.json`)
+fetch(`./db/${resatourant}.json`)
     .then((response)=> response.json())
     .then((data)=> {
-        console.log(data);
+        renderItems(data);
+    })
+    .catch((error) => {
+        console.log(error)
     })
